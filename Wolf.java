@@ -52,9 +52,9 @@ public class Wolf{
         
         @Override
         public void run() {
-            //System.out.println("vanilyen");
             
-                //System.out.println("ciklus3");
+            
+                
                 try {
                     while(szerverfut){
                         buffer=in.readLine();
@@ -68,12 +68,12 @@ public class Wolf{
                         sock.close();
                         in.close();
                     }
-                    //System.out.println("ciklus4");
+                    
                     catch (IOException ex) {
                         Logger.getLogger(Wolf.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
-            System.out.println("Socketlistener lefutott");    
+                
         }
     }
     
@@ -87,23 +87,23 @@ public class Wolf{
         
         @Override
         public void run() {
-            //System.out.println("vanilyenis");
+            
                 try{
                     while(szerverfut){
-                        //System.out.println("ciklus1");
+                        
                         
                         
                         Socket s=sers.accept();
                         
-                        //System.out.println("acceptálva");
+                        
                         sockets.add(s);
-                        //System.out.println("addolva");
+                        
                         Thread t=new Thread(new SocketListener(s));
-                        //System.out.println("Listener létrehozva");
+                        
                         listenerthreads.add(t);
-                        //System.out.println("Listener hozzáadva");
+                        
                         t.start();
-                        //System.out.println("ciklus2");
+                        
                     }
                 }catch(IOException e){
             
@@ -114,7 +114,7 @@ public class Wolf{
                         Logger.getLogger(Wolf.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
-            System.out.println("Accepter lefutott");
+            
         }
     
     }
@@ -125,7 +125,7 @@ public class Wolf{
         Thread accepter=null;
         sockets=new ArrayList();
         listenerthreads=new ArrayList();
-        //System.out.println("Listeners:"+listenerthreads.size());
+        
         try{
             sers=new ServerSocket(5555);
             
@@ -135,15 +135,15 @@ public class Wolf{
             System.out.println(e.toString());
         }
         String str="";
-        //System.out.println("Listeners:"+listenerthreads.size());
+        
         Scanner s=new Scanner(System.in);
         while(!str.equals("/end")){    
             str=s.nextLine();
-            //if(str.equals("//end")) break;
+            
             System.out.println(str);
-            System.out.println("Pedig ez jó baszod!!!!!!");
+            
         }
-        System.out.println("lefutott");
+        
         szerverfut=false;
         
     }

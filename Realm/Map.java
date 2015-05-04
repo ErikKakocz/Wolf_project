@@ -86,22 +86,7 @@ public class Map {
     
     public void savemap()
     {
-        try{
-        PrintWriter w=new PrintWriter(new BufferedWriter(new FileWriter("map.xml")));
-            
-            w.print("<map>\n");
-            for(int i=0;i<MERET_X;i++)
-            {
-                w.print("\t<sor szam=\""+(i+1)+"\">\n");
-                for(int j=0;j<MERET_Y;j++)
-                    w.print("\t\t<field>"+terkep[i][j].tipus+"</field>\n");
-                w.print("\t</sor>\n");
-            }
-            w.print("</map>");
-        }catch(Exception e)
-        {
-            System.out.print("dasgebasz"+e);
-        }
+        //implementálásra vár
     }
     
     
